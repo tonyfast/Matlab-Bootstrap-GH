@@ -14,7 +14,12 @@ if nargin == 1 && strcmp(varargin{1},'init')
     
     zipout = unzip('Matlab-Bootstrap-GH.zip');
     
-    zipaths = strsplit( genpath( 'Matlab-Bootstrap-GH-gh-pages' ), ';' );
+    mbghpath = genpath( 'Matlab-Bootstrap-GH-gh-pages' );
+    if any( mbghpath==';')
+        zipaths = strsplit( genpath( 'Matlab-Bootstrap-GH-gh-pages' ), ';' );
+    else
+         zipaths = strsplit( genpath( 'Matlab-Bootstrap-GH-gh-pages' ), ':' );
+    end
     
     newpaths = cellfun(@(x)regexprep( x,'Matlab-Bootstrap-GH-gh-pages','.'), zipaths,'UniformOutput',false);
     newzip = cellfun(@(x)regexprep( x,'Matlab-Bootstrap-GH-gh-pages','.'), zipout,'UniformOutput',false);
@@ -26,7 +31,7 @@ if nargin == 1 && strcmp(varargin{1},'init')
     end
     
     for ii = 1 : numel( newzip) 
-        if numel( strfind( newzip{ii}, 'matinpublish.m'))==0 || ~exist( newzip{ii},'file')
+        if numel( strfind( newzip{ii}, 'matinpublish.m'))==0 && ~exist( newzip{ii},'file')
             movefile( zipout{ii}, newzip{ii});
         end
     end
