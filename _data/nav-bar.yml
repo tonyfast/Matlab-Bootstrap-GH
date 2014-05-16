@@ -1,0 +1,14 @@
+# site data can be used by ignore the curly brackets.  the nav-bar template replaces them
+# nav-bar template replaces site.baseurl with {{site.baseurl}}
+brand:
+    name: "Git-Out-There-Little-Star"
+    ref: "site.baseurl/index.html"
+pages:
+  - name: Datasets
+    ref: "site.baseurl/views/dataset-index.html"
+  - name: Reports
+    ref: "site.baseurl/views/report-index.html"
+  - name: Posts
+    ref: "site.baseurl/views/post-index.html"
+  - name: Github
+    ref: "https://github.com/tonyfastsite.baseurl"
