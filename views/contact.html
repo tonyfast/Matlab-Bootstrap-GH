@@ -1,0 +1,32 @@
+---
+layout: bootstrap
+---
+
+
+<div class="jumbotron">
+    <h1>{{site.user}}</h1>
+    <h2><a href="mailto:{{site.email}}">{{site.email}}</a></h2>
+    <ul class="list-group">
+        {% for account in site %}
+        
+        {% if account[0] == 'linkedin' %}
+         <li class="list-group-item"><h2>
+            <a href="http://www.linkedin.com/in/{{account[1]}}">
+                <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x33.png" width="160" height="33" border="0" alt="View {{site.user}}'s profile on LinkedIn">   
+            </a>
+        </h2></li>
+        {% elsif account[0] == 'slideshare' %}
+         <li class="list-group-item"><h2>
+            <a title="View {{site.user}}'s profile on slideshare" href="http://www.slideshare.net/{{account[1]}}" ><img src="//public.slidesharecdn.com/b/images/badge160X33px_lite.png" width="160" height="33" alt="View {{site.user}}'s profile on slideshare" /></a>
+        </h2></li>
+        {% elsif account.disqus %}
+        {% elsif account[0] == 'github' %}  
+        <li class="list-group-item">
+                <iframe src="https://githubbadge.appspot.com/{{account[1]}}" style="border: 0;height: 120px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+        </li>
+        {% endif %}
+        
+        
+        {% endfor %}
+    </ul>
+</div>

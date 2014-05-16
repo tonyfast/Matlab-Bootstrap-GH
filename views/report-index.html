@@ -1,0 +1,19 @@
+---
+layout: bootstrap
+title: A Jekyll Skeleton
+---
+
+<h1>Your Reports</h1>
+
+{% for post in site.posts %}
+{% case post.layout %}
+{% when 'report' %}
+<div class="alert alert-warning">
+
+{{ post.date | date_to_string }}<h4>    <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }} 
+</a> </h4>
+
+  </div>
+  {% endcase %}
+
+{% endfor %}

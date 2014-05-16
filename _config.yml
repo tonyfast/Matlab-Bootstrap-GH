@@ -1,0 +1,26 @@
+name: Default Template
+markdown: redcarpet
+pygments: true
+
+# Modify these values
+#  url: http://localhost:4000
+url: http://tonyfast.com
+# Repository Name
+baseurl: /Matlab-Bootstrap-GH
+# default image location
+imgbase: /assets
+
+# User information
+user: "Tony Fast"
+
+email: tony.fast@gmail.com
+# Get your disqus username at www.disqus.com
+disqus: tonyfast
+# A global comment system
+# www.disqus.com
+twitter: docfast
+linkedin: tonyfast 
+github: tonyfast
+slideshare: tonyfast1
+gravatar:
+  hash: f55298e0326454a1d72e6000fcf36b09

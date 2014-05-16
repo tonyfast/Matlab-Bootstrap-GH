@@ -1,0 +1,42 @@
+
+    
+    {% assign isempty = true %}
+    
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Variable Contents
+        </div>
+        <div class="panel-body">
+            <h5>
+                    {% for variable in dset.metadata %} 
+                    
+                
+            
+                    {% if {{variable.dims}} %}
+                    <span class="badge">{{variable.var}}</span> &nbsp;
+                    
+                    {% assign isempty = false %}
+                    
+                        {% for dims in variable.dims %}
+                        {{ dims }}
+                        {% unless forloop.last %}
+                        x
+                        {% endunless %}
+                        {% endfor %}
+                    
+                    {% endif %}
+                        
+            
+            {% unless forloop.last %}
+                        {% unless isempty %}/ {% endunless %}
+                        {% endunless %}
+                    {% endfor %}
+                    </h5>
+                    {% if isempty %}
+                    <i>There is no other information for this dataset.</i>
+                    {% endif %}
+            
+            
+        </div>
+    </div>    
+    

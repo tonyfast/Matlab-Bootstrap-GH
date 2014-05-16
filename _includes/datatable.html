@@ -1,0 +1,47 @@
+<div class="panel panel-warning">
+    <div class="panel-heading"><h2>Statistics</h2></div>
+    <div class="bs-example">
+        <table class="table table-striped">
+            <thead>
+                <th>
+                    Dataset
+                </th>
+                {% for cols in page.var %}
+                <th>
+                    {{cols}}
+                </th>
+                {% endfor %}
+                
+            </thead>
+            
+            
+            <tbody>
+                <tr>
+                    
+                    {% for rows in page.data %}
+                    
+                    
+                    <td>{% if rows.name %}{{rows.name}}{% else %} Unnamed {{forloop.index}} {% endif %}</td>
+                    {% for cols in page.var %}  
+                    <td>
+                        {% assign isempty = true %}
+                        {% for dsvar in rows.metadata %}
+                        
+                        {% if dsvar.var == {{cols}} %}
+                        {{dsvar.value}}
+                        {% assign isempty = false %}
+                        {% endif %}
+                        {% endfor %}
+                        {% if isempty %}
+                        ~
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+                </tr>     
+                
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    </div>
+</div>

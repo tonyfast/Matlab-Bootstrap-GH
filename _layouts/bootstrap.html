@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- Bootstrap stuff -->
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        
+        <!--JQUERY-->
+            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+        <!-- Relative image paths are stored in Assets and this javascript changes the image source OnLoad -->
+             <script type="text/javascript" src="{{site.baseurl}}/assets/javascripts/swapSrc.js"></script>
+    </head>
+    
+    {% include nav-bar.html %}
+    
+    <body onload="swapSrc('{{site.url}}','{{site.baseurl}}','{{site.imgbase}}')">
+        
+        
+        
+        {{content}}
+        
+    </body>
+    
+    
+    
+</html>

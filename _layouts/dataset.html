@@ -1,0 +1,69 @@
+---
+layout: bootstrap
+---
+
+
+<!-- Precompile the variable names 
+I need to get the unique variables from the matlab execution cause its easier
+-->
+
+
+<div class="panel panel-success">
+    {% assign sz = {{page.tags | size}} %}
+    
+    
+    
+        <div class="panel-heading">
+            <h1>{{page.title | default:'This dataset has not been titled yet.' }}</h1>
+        </div>
+    {% if  sz > 0 %}
+        <div class="panel-body">    
+            {{ page.tags | array_to_sentence_string }}
+        </div>
+    
+    {% endif %}
+
+</div>
+
+
+{% include datatable.html %}
+
+
+
+
+{% for dset in page.data %}
+<div class="panel panel-primary">
+    <div class="panel-heading"><h2>
+        {% if dset.name %}{{dset.name}}{% else %} Unnamed {{forloop.index}} {% endif %}
+        
+    </h2>        
+    </div>
+    
+    {% if dset.url %}
+    <div class="alert alert-info">
+        This dataset has been made available for <a href="{{dset.url}}">(Download)</a>.
+    </div>
+    {% endif %}
+    
+    <div class="panel panel-primary"><div class="panel-body">
+            <p>{% if dset.comment %}{{dset.comment}}{% else %}<i> NO DESCRIPTION</i>{% endif %}
+            </p>
+    </div></div>
+    
+    <div class="panel-body">    
+        {% if dset.metadata[0].var %}
+            {% include variablenames.html %}
+        {% endif %}
+        {% include listimages.html %}
+        {% include listlinks.html %}
+        
+        
+        
+    </div>
+</div>
+{% endfor %}
+
+
+{% if site.disqus %}
+    {% include disqus.html %}
+{% endif %}

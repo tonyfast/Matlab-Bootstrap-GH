@@ -1,0 +1,25 @@
+---
+layout: bootstrap
+title: Spatial Statistics Datasets, Reports, and Blogs
+---
+
+<h1>Your Research Blog</h1>
+
+{% for post in site.posts %}
+{% case post.layout %}
+{% when 'post' %}
+{{site.github}}
+<div class="alert alert-success">
+{% when 'dataset' %}
+<div class="alert alert-info">
+{% when 'report' %}
+<div class="alert alert-warning">
+{% else %}
+    <div class="panel-body">
+{% endcase %}
+
+{{ post.date | date_to_string }}<h4>    <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }} 
+</a> </h4>
+
+  </div>
+{% endfor %}

@@ -1,0 +1,12 @@
+{% if  dset.link %}
+
+<div class="panel panel-{% cycle 'success','info' %}">
+    <div class="panel-heading">External Resources</div>
+    <ul class="list-group">
+        {% for link in dset.link %}
+        <li class="list-group-item"><a href="{{link}}">{{link}}</a></li>
+        {% endfor  %}
+    </ul>
+</div>
+
+{% endif %}

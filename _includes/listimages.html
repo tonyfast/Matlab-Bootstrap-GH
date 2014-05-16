@@ -1,0 +1,12 @@
+{% if  dset.image %}
+
+<div class="panel panel-{% cycle 'success','info' %}">
+    <div class="panel-heading">Visualizations</div>
+    <ul class="list-group">
+        {% for img in  dset.image %}
+        <li class="list-group-item"><img src="{{img}}" width="50%"></img></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endif %}

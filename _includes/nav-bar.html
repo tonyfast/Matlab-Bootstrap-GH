@@ -1,0 +1,30 @@
+
+<!-- This liquid template converts site.baseurl from the yml to the value of its contents using a replace template -->
+<nav class="navbar navbar-default" role="navigation">
+    
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{site.data.nav-bar.brand.ref | replace: 'site.baseurl', site.baseurl }}">
+            <b>{{site.data.nav-bar.brand.name}}</b>
+        </a>
+    </div>
+
+    
+    <p class="navbar-text navbar-right">{{site.user}} <a href="{{site.baseurl}}/views/contact.html">
+            <img src="http://www.gravatar.com/avatar/{{site.gravatar.hash}}?s=30.png"></img>
+    </a></p>
+
+<div class="container"> 
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="divider"></li>
+    {% for section in site.data.nav-bar.pages %}
+    
+            <li><a href="{{section.ref | replace: 'site.baseurl', site.baseurl }}">{{section.name}}</a></li>
+            {% endfor %}
+        </ul>
+        
+    </div>
+</div>
+
+
+</nav>

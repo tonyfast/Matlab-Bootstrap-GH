@@ -1,0 +1,14 @@
+---
+layout: bootstrap
+---
+<div class="alert alert-success">
+    
+    {{ page.date | date_to_string }}<h4>    <a href="{{site.baseurl}}{{ page.url }}">{{ page.title }} 
+</a> </h4>
+
+  </div>
+  {{ content }}
+
+{% if site.disqus %}
+    {% include disqus.html %}
+{% endif %}
