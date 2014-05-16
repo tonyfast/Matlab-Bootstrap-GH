@@ -26,8 +26,8 @@ if nargin == 1 && strcmp(varargin{1},'init')
     end
     
     for ii = 1 : numel( newzip) 
-        if numel( strfind( newzip{ii}, 'matinpublish.m'))==0
-        copyfile( zipout{ii}, newzip{ii});
+        if numel( strfind( newzip{ii}, 'matinpublish.m'))==0 || ~exist( newzip{ii},'file')
+            movefile( zipout{ii}, newzip{ii});
         end
     end
     
