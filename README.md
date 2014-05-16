@@ -22,4 +22,5 @@ because Matlab-Bootstrap-GH makes it really easy to host intermediate results. *
 
 1. ``git checkout -b gh-pages`` - work out of the ``gh-pages`` branch
 2. execute ``matinpublish('init')`` - The ``init`` argument sets up all of the Jekyll and Bootstrap dependencies that are managed in the ``gh-pages`` branch is this repo.
+3. edit ``_config.yml`` - Add your user information.
 
