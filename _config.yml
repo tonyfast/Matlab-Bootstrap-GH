@@ -3,25 +3,24 @@ markdown: redcarpet
 pygments: true
 
 # Modify these values
-# local host is used to debug when a local server is running
 #  url: http://localhost:4000
-url: http://GT-MINED.github.io
+url: http://tonyfast.com
 # Repository Name
 baseurl: /Matlab-Bootstrap-GH
 # default image location
 imgbase: /assets
 
 # User information
-user: "Mined Research Group"
+user: "Tony Fast"
 
 email: tony.fast@gmail.com
 # Get your disqus username at www.disqus.com
-disqus: 
+disqus: tonyfast
 # A global comment system
 # www.disqus.com
-twitter: 
-linkedin: 
-github: GT-MINED
-slideshare: 
+twitter: docfast
+linkedin: tonyfast 
+github: tonyfast
+slideshare: tonyfast1
 gravatar:
-  hash: 0e5bb7203c0ed80e06f73614828c0301e0c78a62
+  hash: f55298e0326454a1d72e6000fcf36b09
