@@ -7,6 +7,36 @@ function [varargout] = matinpublish( varargin ); % post_name assets
 % Disqus
 % Dropbox
 
+%% Install bootstrap and gh-pages components
+
+if nargin == 1 && strcmp(varargin{1},'init')
+    urlwrite('https://github.com/tonyfast/Matlab-Bootstrap-GH/archive/gh-pages.zip','Matlab-Bootstrap-GH.zip')
+    
+    zipout = unzip('Matlab-Bootstrap-GH.zip');
+    
+    zipaths = strsplit( genpath( 'Matlab-Bootstrap-GH-gh-pages' ), ':' );
+    
+    newpaths = cellfun(@(x)regexprep( x,'Matlab-Bootstrap-GH-gh-pages','.'), zipaths,'UniformOutput',false);
+    newzip = cellfun(@(x)regexprep( x,'Matlab-Bootstrap-GH-gh-pages','.'), zipout,'UniformOutput',false);
+    
+    for ii = 1 : numel( newpaths) 
+        if numel( newpaths{ii}) && ~isdir( newpaths{ii} )
+            mkdir( newpaths{ii});
+        end
+    end
+    
+    for ii = 1 : numel( newzip) 
+        if numel( strfind( newzip{ii}, 'matinpublish.m'))==0
+        copyfile( zipout{ii}, newzip{ii});
+        end
+    end
+    
+    delete('Matlab-Bootstrap-GH.zip');
+    rmdir( 'Matlab-Bootstrap-GH-gh-pages','s');
+    return;
+end
+
+%%
 keys = {'title','tags'};
 
 param = struct( 'title', sprintf('Output-%i', round(1e5*rand(1)) ) , ...
