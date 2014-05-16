@@ -26,10 +26,13 @@ if nargin == 1 && strcmp(varargin{1},'init')
     end
     
     for ii = 1 : numel( newzip) 
+        if numel( strfind( newzip{ii}, 'matinpublish.m'))==0
         copyfile( zipout{ii}, newzip{ii});
+        end
     end
     
     delete('Matlab-Bootstrap-GH.zip');
+    rmdir( 'Matlab-Bootstrap-GH-gh-pages','s');
     return;
 end
 
