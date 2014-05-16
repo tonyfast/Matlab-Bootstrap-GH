@@ -3,6 +3,10 @@ Matlab-Bootstrap-GH
 
 This repository assists in publishing Matlab codes and variables into blog-aware webpages for rapid dissmeination of information.
 
+* Matlab-Bootstrap-GH contains Bootstrap 3
+* Installs the file directory structure for Jekyll
+* Creates html websites and webpages for Matlab data and codes in Git repositories
+
 ## Components
 
 * ``matinpublish`` - pubishes Matlab scripts and Matlab structures to .html pages that contain metadata about the script or variable.
