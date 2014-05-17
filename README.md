@@ -34,7 +34,6 @@ because Matlab-Bootstrap-GH makes it really easy to host intermediate results. *
 2. Register for a username.
 3. Place your username in the ``_config.yml`` next to the field ``disqus``.
 4. Afterwards each post with have a comment box.
-
    * Comments and activity can be monitored on [DISQUS](www.disqus.com)
 
 
