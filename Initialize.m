@@ -26,9 +26,18 @@ matinpublish('init');
 % short javascript snippet that is served when the webpages are launched.
 % * _includes - Recycled HTML code snippet.
 
+%% Adding matinpublish to the path
+% There are few options for integrating matinpublish.  I will include
+% tutorials later.
+%
+% * *Download the current version of matinpublish* - It is a standalone
+% file.  Download it from Github
+% * *Clone this repo* - Clone this repo in your working directory, add the
+% cloned folder to the path, and boom.
+% * *Fork and Submodule* - Fork the Matlab-Bootstrap-GH repo to an account
+% of yours then add it as a Submodule.
+
 %% Generating this webpage
 % I built this webpage in the command line using the following code snippet
 %
-%
-%
-%
+% _matinpublish('Initialize.m','title','Initializing Github Pages, Jekyll, and Bootstrap')_
