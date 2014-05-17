@@ -24,3 +24,17 @@ because Matlab-Bootstrap-GH makes it really easy to host intermediate results. *
 2. execute ``matinpublish('init')`` - The ``init`` argument sets up all of the Jekyll and Bootstrap dependencies that are managed in the ``gh-pages`` branch is this repo.
 3. edit ``_config.yml`` - Add your user information.
 
+## DISQUS - A global comment system
+
+[DISQUS](www.disqus.com) is a free global comment system for webpages.  In this versiuon ``mbgh``, the universal DISQUS commenting html snippet is added at the end of each dataset and report.  The comment systems attachs the conversation of data and codes directly alongside the source.
+
+#### Activating Disqus
+
+1. Please go to [DISQUS](www.disqus.com)
+2. Register for a username.
+3. Place your username in the ``_config.yml`` next to the field ``disqus``.
+4. Afterwards each post with have a comment box.
+
+   * Comments and activity can be monitored on [DISQUS](www.disqus.com)
+
+
