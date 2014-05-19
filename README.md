@@ -36,4 +36,4 @@ because Matlab-Bootstrap-GH makes it really easy to host intermediate results. *
 4. Afterwards each post with have a comment box.
    * Comments and activity can be monitored on [DISQUS](www.disqus.com)
 
-
+## [An Example PAGE](http://tonyfast.com/Matlab-Bootstrap-GH/2014/05/17/Initializing-Github-Pages%2C-Jekyll%2C-and-Bootstrap.html)
