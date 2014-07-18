@@ -9,7 +9,7 @@ function [varargout] = matinpublish( varargin ); % post_name assets
 
 %% Install bootstrap and gh-pages components
 
-if nargin == 1 && strcmp(varargin{1},'init')
+if nargin == 1 &&  isstr(varargin{1}) && strcmp(varargin{1},'init')
     urlwrite('https://github.com/tonyfast/Matlab-Bootstrap-GH/archive/gh-pages.zip','Matlab-Bootstrap-GH.zip')
     
     zipout = unzip('Matlab-Bootstrap-GH.zip');
