@@ -113,7 +113,7 @@ timenow = clock;
 if param.isreport
     % Always default and send the contents to assets
     fmatpub = publish( varargin{1:lastid}, 'outputDir', fullfile('.','assets') );
-    param.layout = 'report';
+    param.layout = 'page';
 elseif param.isdataset
     if param.execute
         [ varargout{1:nargout} ] = varargin{1}( varargin{2:lastid} );
